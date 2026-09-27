@@ -1,0 +1,17 @@
+[package]
+name = "rust-polars-micro-lakehouse"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+polars = { version = "0.35", default-features = false, features = ["lazy", "parquet", "csv"] }
+chrono = "0.4"
+serde = { version = "1", features = ["derive"] }
+thiserror = "1"
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.dev]
+debug = 0
+strip = "debuginfo"
